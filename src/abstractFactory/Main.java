@@ -20,16 +20,14 @@ public class Main {
 		Class adi = null;
 		Class bos = null;
 		Vaate clothes = null;
-	    Vaate clothes2 = null;
+	    	Vaate clothes2 = null;
 		
 		Properties properties = new Properties();
-		Properties properties2 = new Properties();
 		
 		properties.load(new FileInputStream("factory.properties"));
-		properties2.load(new FileInputStream("factory2.properties")); 
 		
 		adi = Class.forName(properties.getProperty("factory"));
-		bos = Class.forName(properties2.getProperty("factory"));
+		bos = Class.forName(properties.getProperty("factory2"));
 		
 		clothes = (Vaate)adi.newInstance();
 		clothes2 = (Vaate)bos.newInstance();
